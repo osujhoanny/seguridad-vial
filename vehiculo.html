@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Tables</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.bootstrap4.css" />
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">System Title</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="conductor.html">
+                    <i class="fas fa-fw fa-id-card"></i>
+                    <span>Conductores</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="vehiculo.html">
+                    <i class="fas fa-fw fa-car"></i>
+                    <span>Vehículos</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reporte.html">
+                    <i class="fas fa-fw fa-file-invoice-dollar"></i>
+                    <span>Reporte</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="404.html">
+                    <i class="fas fa-fw fa-tools"></i>
+                    <span>Mantenimiento</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="sidebar-heading">
+                Configuración
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true">
+                    <i class="fas fa-fw fa-user-cog"></i>
+                    <span>Cliente</span>
+                </a>
+                <div id="collapse1" class="collapse" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Configuración de Cliente:</h6>
+                        <a class="collapse-item" href="404.html">Proveedores</a>
+                        <a class="collapse-item" href="404.html">Propietarios</a>
+                        <a class="collapse-item" href="404.html">Área de proyecto</a>
+                        <a class="collapse-item" href="404.html">Causalidades</a>
+                        <a class="collapse-item" href="404.html">Costo daño-propiedad</a>
+                        <a class="collapse-item" href="404.html">Valoración de asccidentes</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light topbar static-top">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                      </button>
+
+                    <!-- Sidebar Toggler (Sidebar) -->
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">2</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alertas
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">Diciembre 12, 2020</div>
+                                        <span class="font-weight-bold">Nuevo reporte del mes esta listo para descargar!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">Diciembre 2, 2020</div>
+                                        Aquí va una alerta.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las alertas</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre Apellido</span>
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Configuración
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Log de Actividad
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Salir
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="row pl-3">
+                        <h4>Vehículos</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>Placa</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label>Nombre Conductor</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label>Estado</label>
+                                                <select class="form-control">
+                                                <option selected>Seleccione</option>
+                                                <option>...</option>
+                                              </select>
+                                            </div>
+                                            <div class="col">
+                                                <label>Área - Proyecto</label>
+                                                <select class="form-control">
+                                                <option selected>Seleccione</option>
+                                                <option>...</option>
+                                              </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>Activo</label>
+                                                <input type="text" class="form-control" value="10" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label>Inactivo</label>
+                                                <input type="text" class="form-control" value="25" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label>Contratista</label>
+                                                <input type="text" class="form-control" value="23" disabled>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DataTables Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable_vehiculo" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nro.</th>
+                                            <th>Placa</th>
+                                            <th>Marca</th>
+                                            <th>Tipo</th>
+                                            <th>Clase</th>
+                                            <th>SOAT</th>
+                                            <th>Vigencia</th>
+                                            <th>Póliza Seg.</th>
+                                            <th>Estado</th>
+                                            <th>Área Proyecto</th>
+                                            <th>Observación</th>
+                                            <th>Área Operativa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal_conductor" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Vehículo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Placa: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Marca: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Línea: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Modelo:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Tipo servicio: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Tipo vehículo: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Nro. Motor:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Nro. VIN:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Serial:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Nro Chasis: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Color: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Tipo combustible: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Modalidad servicio: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Cap Carga: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Nro Pasajeros: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Propietario: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Proveedor Transporte: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option>...</option>
+                                          </select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Proveedor GPS: </label>
+                                        <select class="form-control">
+                                            <option selected>Seleccione...</option>
+                                            <option value="ninguno">ninguno</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="modal_documentos" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Documentos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>SOAT: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Técnico Mecánica: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Pólica RCETC: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Tarjeta Tránsito: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Póliza de riesgo: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Tarjeta operativa: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Revisión preventiva: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Fuec: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Elegir Archivo: </label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Buscar...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button">Ver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Listo para irte?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+                </div>
+                <div class="modal-body">Selecciona "Logout" para cerrar la sesión actual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+</body>
+
+</html>
