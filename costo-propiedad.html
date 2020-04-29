@@ -53,7 +53,7 @@
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" href="conductor.html">
                     <i class="fas fa-fw fa-id-card"></i>
                     <span>Conductores</span></a>
@@ -63,7 +63,7 @@
                     <i class="fas fa-fw fa-car"></i>
                     <span>Vehículos</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="reporte.html">
                     <i class="fas fa-fw fa-file-invoice-dollar"></i>
                     <span>Reporte</span></a>
@@ -193,38 +193,31 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="row pl-3">
-                        <h4>Reportes</h2>
+                        <h4>Costo Daño-Propiedad</h2>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-lg-8">
                             <div class="card bg-primary text-white shadow">
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
                                             <div class="col">
-                                                <label>Evento</label>
+                                                <label>ID</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="col">
-                                                <label>Placa</label>
+                                                <label>Nombre Conductor</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="col">
-                                                <label>Tipo</label>
-                                                <select class="form-control">
-                                                    <option selected>Seleccione</option>
-                                                    <option>...</option>
-                                                  </select>
-                                            </div>
-                                            <div class="col">
-                                                <label>Clase</label>
+                                                <label>Estado</label>
                                                 <select class="form-control">
                                                 <option selected>Seleccione</option>
                                                 <option>...</option>
                                               </select>
                                             </div>
                                             <div class="col">
-                                                <label>Área</label>
+                                                <label>Área - Proyecto</label>
                                                 <select class="form-control">
                                                 <option selected>Seleccione</option>
                                                 <option>...</option>
@@ -241,39 +234,40 @@
                                     <form>
                                         <div class="row">
                                             <div class="col">
-                                                <label>Nro. de accidentes vehiculares</label>
-                                            </div>
-                                            <div class="col">
-                                                <label>Propios</label>
+                                                <label>Activo</label>
                                                 <input type="text" class="form-control" value="10" disabled>
                                             </div>
                                             <div class="col">
-                                                <label>Contratistas</label>
-                                                <input type="text" class="form-control" value="2" disabled>
+                                                <label>Inactivo</label>
+                                                <input type="text" class="form-control" value="25" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label>Contratista</label>
+                                                <input type="text" class="form-control" value="23" disabled>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- DataTables Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable_reporte" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable_costod" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nro.</th>
-                                            <th>Placa</th>
-                                            <th>Tipo</th>
-                                            <th>Clase</th>
-                                            <th>Área</th>
-                                            <th>% Proceso</th>
-                                            <th>% Acciones</th>
-                                            <th>$ costo</th>
-                                            <th>Daños</th>
+                                            <th>Costo Reparación</th>
+                                            <th>Costo Vehículo</th>
+                                            <th>Días</th>
+                                            <th>Costo Total</th>
+                                            <th>Horas hombre Perdido</th>
+                                            <th>Valor h/h</th>
+                                            <th>Valor Total</th>
+                                            <th>Gastos Legales</th>
+                                            <th>Valor Total Daño Propiedad</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -334,11 +328,11 @@
             <!-- End of Main Content -->
 
             <!-- Modal -->
-            <div class="modal fade" id="modal_reporte" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="modal_costod" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Reporte</h5>
+                            <h5 class="modal-title">Tabla Costos Daño Propiedad</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         </button>
                         </div>
@@ -346,104 +340,41 @@
                             <form>
                                 <div class="form-row">
                                     <div class="col">
-                                        <label>Fecha de evento: </label>
+                                        <label>Costo Reparación: </label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col">
-                                        <label>Hora: </label>
+                                        <label>Costo Vehículo: </label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col">
-                                        <label>Jornada: </label>
-                                        <select class="form-control">
-                                            <option selected>Seleccione...</option>
-                                            <option>Diurna</option>
-                                            <option>Nocturna</option>
-                                          </select>
-                                    </div>
-                                </div>
-                                <h5 class="mt-2">Datos del Vehículo</h5>
-                                <hr class="mt-0">
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Placa: </label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col">
-                                        <label>Tipo: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                    <div class="col">
-                                        <label>Línea: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Tipo servicio: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                    <div class="col">
-                                        <label>Modalidad servicio: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                    <div class="col">
-                                        <label>Área asignada: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                </div>
-                                <h5 class="mt-2">Datos del Conductor</h5>
-                                <hr class="mt-0">
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Nro ID: </label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col">
-                                        <label>Nombre y apellido:</label>
-                                        <input type="text" class="form-control" disabled>
-                                    </div>
-                                    <div class="col">
-                                        <label>Cargo: </label>
-                                        <select class="form-control" disabled>
-                                            <option selected>Seleccione...</option>
-                                            <option>...</option>
-                                          </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Fecha de nacimiento: </label>
-                                        <input type="text" class="form-control" disabled>
-                                    </div>
-                                    <div class="col">
-                                        <label>Años de experiencia:</label>
-                                        <input type="text" class="form-control" disabled>
-                                    </div>
-                                    <div class="col">
-                                        <label>Horas laboradas previas:</label>
+                                        <label>Días: </label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <h5 class="mt-2">Descripción accidente vehicular</h5>
-                                    <hr class="mt-0">
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <div class="col">
+                                        <label>Costo Total:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Horas Hombre Perdido: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Valor h/h:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Valor total:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Gastos Legales:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
                                 </div>
                             </form>
                         </div>
